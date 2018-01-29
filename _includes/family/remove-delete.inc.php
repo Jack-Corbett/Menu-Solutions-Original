@@ -9,4 +9,4 @@ $member_id = mysqli_real_escape_string($conn, $_GET['member']);
 $sql = "DELETE FROM family WHERE member_id = '$member_id'";
 $result = mysqli_query($conn, $sql);
 
-header('Location: ../../family/members.php');
+header('Location: ../../account/family/members.php');

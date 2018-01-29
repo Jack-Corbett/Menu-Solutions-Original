@@ -4,7 +4,7 @@
       <a class="w3-padding-large" href="javascript:void(0)" onclick="showMenu()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     </li>
     <li>
-      <a href="../" class="w3-padding-large w3-hover-none w3-hover-text-light-grey">HOME</a>
+      <a href="/" class="w3-padding-large w3-hover-none w3-hover-text-light-grey">HOME</a>
     </li>
     <li class="w3-hide-small">
       <a href="../about.php" class="w3-padding-large">ABOUT</a>

@@ -1,13 +1,13 @@
 <?php
-include '../_assets/header.php';
-include '../_assets/standardstyle.php';
+include ($_SERVER['DOCUMENT_ROOT'] . '/_assets/header.php');
+include ($_SERVER['DOCUMENT_ROOT'] . '/_assets/standardstyle.php');
 ?>
 
 <div class="page-wrap">
 
     <?php
     if (isset($_SESSION['user_id'])) {
-        include '../_assets/navbar.loggedin.php';
+        include ($_SERVER['DOCUMENT_ROOT'] . '/_assets/navbar.loggedin.php');
         ?>
         <br/><br/>
 
@@ -21,8 +21,8 @@ include '../_assets/standardstyle.php';
         <!-- Members table -->
         <ul class="w3-ul w3-card-4 w3-animate-opacity">
             <?php
-            include '../_includes/dbh.inc.php';
-            include '../_includes/family/members-fetch.inc.php';
+            include ($_SERVER['DOCUMENT_ROOT'] . '/_includes/dbh.inc.php');
+            include ($_SERVER['DOCUMENT_ROOT'] . '/_includes/family/members-fetch.inc.php');
 
             while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 
@@ -38,11 +38,11 @@ include '../_assets/standardstyle.php';
                     <img src="
                          <?php
                          if ($gender == 'm') {
-                             echo '../_img/male_user.png';
+                             echo '../../_img/male_user.png';
                          } elseif ($gender == 'f') {
-                             echo '../_img/female_user.png';
+                             echo '../../_img/female_user.png';
                          } else {
-                             echo '../_img/other_user.png';
+                             echo '../../_img/other_user.png';
                          }
                          ?>"
                          class="w3-left w3-circle w3-margin-right" style="width:30px">
@@ -67,12 +67,12 @@ include '../_assets/standardstyle.php';
 
         <?php
     } else {
-        include '../_assets/navbar.loggedout.php';
-        include '../_assets/loginerror.php';
+        include ($_SERVER['DOCUMENT_ROOT'] . '/_assets/navbar.loggedout.php');
+        include ($_SERVER['DOCUMENT_ROOT'] . '/_assets/loginerror.php');
     }
     ?>
 </div>
 
 <?php
-include '../_assets/footer.php';
+include ($_SERVER['DOCUMENT_ROOT'] . '/_assets/footer.php');
 ?>

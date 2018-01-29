@@ -18,7 +18,7 @@ include '../_assets/standardstyle.php';
     <br/><br/>
 
     <!-- Login Form -->
-    <div class="w3-container w3-center">
+    <div class="w3-center">
         <h1>Login</h1>
         <div class="w3-card-4">
             <br/>

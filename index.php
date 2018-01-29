@@ -61,7 +61,7 @@ if (isset($_SESSION['user_id'])) {
     <span class="w3-display-middle w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">MENU SOLUTIONS</span>
     <a <?php
     if (isset($_SESSION['user_id'])) {
-        echo 'href="family/members.php"';
+        echo 'href="plan/plan.php"';
     } else {
         echo 'href="user/login.php"';
     }
@@ -80,12 +80,12 @@ if (isset($_SESSION['user_id'])) {
 
 <!-- Instructions -->
 <div class="w3-row-padding w3-container w3-center w3-dark-grey">
-    <div class="w3-quarter"><h3>Add Your Family</h3>
+    <div class="w3-quarter"><h3>Create an Account</h3>
         <img src="_img/family.png">
-        <p>Add each family members details</p>
+        <p>Add your hungry crew and pick the healthy recipes you want included in your plans from a wide range of recipe packs</p>
         <?php
         if (isset($_SESSION['user_id'])) {
-            echo '<a href="family/members.php" class=" w3-btn w3-hover-white w3-theme-d1">FAMILY</a>';
+            echo '<a href="account/family/members.php" class=" w3-btn w3-hover-white w3-theme-d1">FAMILY</a>';
         }
         ?>
         <br/><br/>
@@ -93,7 +93,7 @@ if (isset($_SESSION['user_id'])) {
 
     <div class="w3-quarter w3-dark-grey w3-center"><h3>Tell Us When</h3>
         <img src="_img/clock.png">
-        <p>Tell us how much time you have to cook each night and who will be eating</p>
+        <p>Tell us how much time you have to cook each night along with who will be eating and we will craft you a meal plan</p>
         <?php
         if (isset($_SESSION['user_id'])) {
             echo '<a href="plan/plan.php" class=" w3-btn w3-hover-white w3-theme-d1">PLAN</a>';
@@ -104,7 +104,7 @@ if (isset($_SESSION['user_id'])) {
 
     <div class="w3-quarter w3-dark-grey w3-center"><h3>Generate Calendar</h3>
         <img src="_img/calendar.png">
-        <p>Review your calendar of meal plans for the week</p>
+        <p>View your meal plan for the week with quick access to every recipe with ingredients and instructions listed, making cooking easy every night</p>
         <?php
         if (isset($_SESSION['user_id'])) {
             echo '<a href="calendar/calendar.php" class=" w3-btn w3-hover-white w3-theme-d1">CALENDAR</a>';
@@ -115,7 +115,7 @@ if (isset($_SESSION['user_id'])) {
 
     <div class="w3-quarter w3-dark-grey w3-center"><h3>Shopping List</h3>
         <img src="_img/list.png">
-        <p>Use your generated shopping list to fetch the ingredients and enjoy a week of stress free cooking</p>
+        <p>Grab the ingredients using your generated shopping list with everything you need to enjoy a week of stress free cooking</p>
         <?php
         if (isset($_SESSION['user_id'])) {
             echo '<a href="list/list.php" class=" w3-btn w3-hover-white w3-theme-d1">LIST</a>';

@@ -1,13 +1,13 @@
 <?php
-include '../_assets/header.php';
-include '../_assets/standardstyle.php';
+include ($_SERVER['DOCUMENT_ROOT'] . '/_assets/header.php');
+include ($_SERVER['DOCUMENT_ROOT'] . '/_assets/standardstyle.php');
 ?>
 
 <div class="page-wrap">
 
     <?php
     if (isset($_SESSION['user_id'])) {
-        include '../_assets/navbar.loggedin.php';
+        include ($_SERVER['DOCUMENT_ROOT'] . '/_assets/navbar.loggedin.php');
         ?>
         <br/><br/>
 
@@ -18,11 +18,11 @@ include '../_assets/standardstyle.php';
                 <br/>
 
                 <?php
-                include '../_includes/family/remove-fetch.inc.php';
+                include ($_SERVER['DOCUMENT_ROOT'] . '/_includes/family/remove-fetch.inc.php');
                 echo "<p>Do you want to remove " . $row['name'] . "?</p>";
                 ?>
 
-                <a href="../_includes/family/remove-delete.inc.php?member=<?php echo $member_id; ?>"
+                <a href="../../_includes/family/remove-delete.inc.php?member=<?php echo $member_id; ?>"
                    class="w3-btn w3-hover-dark-grey w3-theme-d1 w3-round-xlarge"><i class="fa fa-check"
                                                                                     aria-hidden="true"></i></a>
                 <a href="members.php" class="w3-btn w3-hover-dark-grey w3-red w3-round-xlarge"><i class="fa fa-times"
@@ -34,13 +34,13 @@ include '../_assets/standardstyle.php';
 
         <?php
     } else {
-        include '../_assets/navbar.loggedout.php';
-        include '../_assets/loginerror.php';
+        include ($_SERVER['DOCUMENT_ROOT'] . '/_assets/navbar.loggedout.php');
+        include ($_SERVER['DOCUMENT_ROOT'] . '/_assets/loginerror.php');
     }
     ?>
 
 </div>
 
 <?php
-include '../_assets/footer.php'
+include ($_SERVER['DOCUMENT_ROOT'] . '/_assets/footer.php');
 ?>

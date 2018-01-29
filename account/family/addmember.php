@@ -1,13 +1,13 @@
 <?php
-include '../_assets/header.php';
-include '../_assets/standardstyle.php';
+include ($_SERVER['DOCUMENT_ROOT'] . '/_assets/header.php');
+include ($_SERVER['DOCUMENT_ROOT'] . '/_assets/standardstyle.php');
 ?>
 
 <div class="page-wrap">
 
     <?php
     if (isset($_SESSION['user_id'])) {
-        include '../_assets/navbar.loggedin.php';
+        include ($_SERVER['DOCUMENT_ROOT'] . '/_assets/navbar.loggedin.php');
         ?>
         <br/><br/>
 
@@ -16,7 +16,7 @@ include '../_assets/standardstyle.php';
 
             <div class="w3-animate-opacity w3-card-4">
                 <br/>
-                <form action="../_includes/family/add-member.inc.php" method="post">
+                <form action="../../_includes/family/add-member.inc.php" method="post">
                     <input type="text" name="firstname" placeholder="First Name" required><br/><br/>
 
                     <input type="text" name="lastname" placeholder="Surname" required><br/><br/>
@@ -66,12 +66,12 @@ include '../_assets/standardstyle.php';
         </div>
         <?php
     } else {
-        include '../_assets/navbar.loggedout.php';
-        include '../_assets/loginerror.php';
+        include ($_SERVER['DOCUMENT_ROOT'] . '/_assets/navbar.loggedout.php');
+        include ($_SERVER['DOCUMENT_ROOT'] . '/_assets/loginerror.php');
     }
     ?>
 </div>
 
 <?php
-include '../_assets/footer.php'
+include ($_SERVER['DOCUMENT_ROOT'] . '/_assets/footer.php');
 ?>

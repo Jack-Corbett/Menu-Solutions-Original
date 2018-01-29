@@ -5,14 +5,7 @@
       <a class="w3-padding-large" href="javascript:void(0)" onclick="showMenu()" title="Toggle Navigation Menu"><i class="fa fa-bars" aria-hidden="true"></i></a>
     </li>
     <li>
-      <a href="../" class="w3-padding-large w3-hover-none w3-hover-text-light-grey">HOME</a>
-    </li>
-    <li class="w3-hide-small w3-hide-medium w3-dropdown-hover">
-      <a href="javascript:void(0)" class="w3-padding-large" title="More">FAMILY <i class="fa fa-caret-down" aria-hidden="true"></i></a>
-      <div class="w3-dropdown-content w3-card-4">
-      	<a href="../family/members.php" class="w3-padding-large">MEMBERS</a>
-        <a href="../family/addmember.php" class="w3-padding-large">ADD MEMBER</a>
-      </div>
+      <a href="/" class="w3-padding-large w3-hover-none w3-hover-text-light-grey">HOME</a>
     </li>
     <li class="w3-hide-small w3-hide-medium">
       <a href="../plan/plan.php" class="w3-padding-large">PLAN</a>
@@ -46,12 +39,16 @@
 
         echo "<li class='w3-hide-small w3-hide-medium w3-padding-large'>" . $row['name'] . "</li>";
       ?>
-        <li class="w3-hide-small w3-hide-medium">
-            <a href="#" class="w3-padding-large w3-hover-theme">ACCOUNT</a>
+        <li class="w3-hide-small w3-hide-medium w3-dropdown-hover">
+            <a href="javascript:void(0)" class="w3-padding-large" title="More">ACCOUNT <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+            <div class="w3-dropdown-content w3-card-4">
+                <a href="../" class="w3-padding-large">PROFILE</a>
+                <a href="../account/family/members.php" class="w3-padding-large">FAMILY</a>
+                <a href="../" class="w3-padding-large">RECIPES</a>
+                <a href="../" class="w3-padding-large w3-hover-theme">UPGRADE</a>
+                <a href="../_includes/user/logout.inc.php" class="w3-padding-large w3-hover-red">LOGOUT</a>
+            </div>
         </li>
-      <li class="w3-hide-small w3-hide-medium">
-        <a href="../_includes/user/logout.inc.php" class="w3-padding-large w3-hover-red">LOGOUT</a>
-      </li>
     </div>
   </ul>
 </div>
@@ -59,7 +56,6 @@
 <!-- Navigation Bar for small devices -->
 <div id="smallNav" class="w3-hide w3-hide-large w3-top" style="margin-top:50px">
   <ul class="w3-navbar w3-left-align w3-dark-grey">
-    <li><a href="../family/members.php" class="w3-padding-large">FAMILY</a></li>
     <li><a href="../plan/plan.php" class="w3-padding-large">PLAN</a></li>
     <li><a href="../calendar/calendar.php" class="w3-padding-large">CALENDAR</a></li>
     <li><a href="../list/list.php" class="w3-padding-large">LIST</a></li>
@@ -71,9 +67,16 @@
     <?php
       }
     ?>
-    <li class="w3-right">
-      <a href="../_includes/user/logout.inc.php" class="w3-padding-large w3-hover-red">LOGOUT</a>
-    </li>
+      <li class="w3-dropdown-hover w3-right">
+          <a href="javascript:void(0)" class="w3-padding-large w3-hover-theme" title="More">ACCOUNT <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+          <div class="w3-dropdown-content w3-card-4">
+              <a href="../" class="w3-padding-large">PROFILE</a>
+              <a href="../account/family/members.php" class="w3-padding-large">FAMILY</a>
+              <a href="../" class="w3-padding-large">RECIPES</a>
+              <a href="../" class="w3-padding-large">UPGRADE</a>
+              <a href="../_includes/user/logout.inc.php" class="w3-padding-large w3-red">LOGOUT</a>
+          </div>
+      </li>
   </ul>
 </div>
 

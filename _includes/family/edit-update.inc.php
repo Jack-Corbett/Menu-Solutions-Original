@@ -20,5 +20,5 @@ if (empty($firstname)) {
   $sql = "UPDATE family SET first_name = '$firstname', last_name = '$lastname', gender = '$gender', default_ticked = '$default_ticked' WHERE member_id = '$member_id'";
   $result = mysqli_query($conn, $sql);
 
-  header('Location: ../../family/members.php');
+  header('Location: ../../account/family/members.php');
 }

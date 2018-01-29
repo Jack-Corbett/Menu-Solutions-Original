@@ -23,29 +23,11 @@ for ($x = 0; $x < 7; $x++) {
 //Declare the array to store the plan dates
 $date_eating = array();
 
-//OOP to calculate the dates of next week
-//Create DateTime object containing the current time
-$date = new DateTime();
-
-//Set the date object to Monday of next week
-$date->setISODate($date->format('o'), $date->format('W') . 1);
-
-//Calculate every days date of that week from Monday to Sunday by using the 6 following days
-$periods = new DatePeriod($date, new DateInterval('P1D'),6);
-
-//Convert the DatePeriod object to the week_dates array
-$week_dates = iterator_to_array($periods);
-
-//Format the dates inside the week_dates array ready to be stored in the database as strings
-for ($i = 0; $i < 7; $i++) {
-    $date_eating[$i] = $week_dates[$i]->format('Y-m-d');
-}
-
 //A script to find the largest plan ID for that user so we can check last weeks recipes
 include 'get-max-plan.inc.php';
 
 //If they have a plan in the database
-if (isset($plan_id)) {
+if (!empty($plan_id)) {
     $plan_exists = true;
 
     $sql = "SELECT start_date FROM plan WHERE plan_id = '$plan_id'";
@@ -54,7 +36,7 @@ if (isset($plan_id)) {
     $current_start_date = $row['start_date'];
 
     //Check if the start date of their latest plan is for the current week. If so ask the user if they want to delete their current plan
-    if ($current_start_date == $date_eating[0]) {
+    if ($current_start_date == date("Y-m-d", strtotime("monday"))) {
         header("Location: ../../plan/removeplan.php");
         exit();
     }
@@ -70,6 +52,24 @@ if (isset($plan_id)) {
     while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
         array_push($recipe_history, $row['recipe_id']);
     }
+}
+
+$monday = new DateTime('monday');
+
+// Clone start date
+$endDate = clone $monday;
+// Add 7 days to the start date
+$endDate->modify('+7 days');
+
+// Increase with an interval of one day
+$dateInterval = new DateInterval('P1D');
+
+$dateRange = new DatePeriod($monday, $dateInterval, $endDate);
+
+$dates = iterator_to_array($dateRange);
+
+for ($i=0; $i<7; $i++) {
+    $date_eating[$i] = $dates[$i]->format('Y-m-d');
 }
 
 //Checks how many recipes there are in the table to set the searching upper bound

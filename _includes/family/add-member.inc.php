@@ -23,5 +23,5 @@ if (empty($firstname)) {
         VALUES ('$id', '$firstname', '$lastname', '$gender', '$default_ticked')";
   $result = mysqli_query($conn, $sql);
 
-  header('Location: ../../family/members.php');
+  header('Location: ../../account/family/members.php');
 }
