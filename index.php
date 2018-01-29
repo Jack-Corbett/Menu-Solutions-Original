@@ -155,9 +155,9 @@ if (isset($_SESSION['user_id'])) {
 
     <div id="Add Family" class="w3-container w3-text-grey display">
       <p>First you need to add your family members and fill in
-        some basic information for each person. We will use this when generating the meal plan. 
-        To add a member simply select add members from the drop down in the top bar or press the round green plus button. 
-        This will take you to a page where you can fill in their first name, surname and gender. Once that is filled in press the green add person  
+        some basic information for each person. We will use this when generating the meal plan.
+        To add a member simply select add members from the drop down in the top bar or press the round green plus button.
+        This will take you to a page where you can fill in their first name, surname and gender. Once that is filled in press the green add person
         button.</p>
        <div class="w3-center">
       	 <img class="w3-card-2" src="_img/addmember-tut.png" style="width:100%">
@@ -166,7 +166,7 @@ if (isset($_SESSION['user_id'])) {
     </div>
 
     <div id="Members" class="w3-container w3-text-grey display">
-      <p>You can manage your family from the members page. To delete a family member just press the x on the far right and the tick to confirm. 
+      <p>You can manage your family from the members page. To delete a family member just press the x on the far right and the tick to confirm.
         To edit their information just press the pencil and when your finished press the green tick to save your changes. </p>
       <div class="w3-center">
         <img class="w3-card-2" src="_img/family-tut.png"  style="width:100%">

@@ -11,7 +11,7 @@
     everyone to eat home cooked healthy meals. It will even make you a shopping list, so you know exactly what to buy at the store.">
   <meta name="keywords" content="meal, meals, planner, recipes, menu, solutions, family, plan">
   <meta name="author" content="Jack Corbett">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, width=device-width">
   <link rel="stylesheet" href="/_css/main.css">
   <link rel="stylesheet" href="/_css/theme.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">

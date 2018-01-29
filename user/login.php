@@ -7,11 +7,11 @@
 
   <!-- Navigation Bar -->
   <?php
-  $id = $_SESSION['user_id'];
     if (isset($_SESSION['user_id'])) {
-      include '../_assets/navbar.loggedin.php';
+        $id = $_SESSION['user_id'];
+        include '../_assets/navbar.loggedin.php';
     } else {
-      include '../_assets/navbar.loggedout.php';
+        include '../_assets/navbar.loggedout.php';
     }
    ?>
 
@@ -49,7 +49,7 @@
       <br />
 
       <?php
-        if ($id !== NULL) {
+      if (isset($_SESSION['user_id']) AND $id !== NULL) {
       ?>
       <form action="../_includes/user/logout.inc.php">
         <button type="submit" class="w3-btn w3-hover-red w3-animate-opacity w3-theme-d1">Log Out</button>
