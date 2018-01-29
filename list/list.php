@@ -24,6 +24,7 @@ include '../_assets/standardstyle.php';
         //Finds the latest plan
         include '../_includes/plan/get-max-plan.inc.php';
 
+        /** @var Integer $plan_id */
         if ($plan_id === NULL) {
             ?>
             <p class="w3-text-red w3-center">To view your shopping list you must first visit the plan page and generate

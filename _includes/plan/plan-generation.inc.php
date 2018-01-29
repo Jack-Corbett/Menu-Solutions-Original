@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include '../dbh.inc.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/_includes/dbh.inc.php';
 
 //Get the users ID from their session
 $id = $_SESSION['user_id'];
@@ -22,13 +22,17 @@ for ($x = 0; $x < 7; $x++) {
 
 //Declare the array to store the plan dates
 $date_eating = array();
+
 //OOP to calculate the dates of next week
 //Create DateTime object containing the current time
 $date = new DateTime();
+
 //Set the date object to Monday of next week
 $date->setISODate($date->format('o'), $date->format('W') . 1);
+
 //Calculate every days date of that week from Monday to Sunday by using the 6 following days
-$periods = new DatePeriod($date, new DateInterval('P1D'), 6);
+$periods = new DatePeriod($date, new DateInterval('P1D'),6);
+
 //Convert the DatePeriod object to the week_dates array
 $week_dates = iterator_to_array($periods);
 
@@ -41,7 +45,7 @@ for ($i = 0; $i < 7; $i++) {
 include 'get-max-plan.inc.php';
 
 //If they have a plan in the database
-if ($plan_id > 0) {
+if (isset($plan_id)) {
     $plan_exists = true;
 
     $sql = "SELECT start_date FROM plan WHERE plan_id = '$plan_id'";
@@ -115,9 +119,9 @@ for ($i = 0; $i < 7; $i++) {
 
         //Check the recipe has not already been selected for that week
         for ($q = 0; $q < $i; $q++) {
-                if ($recipe == $plan[$q]) {
-                    $accept = false;
-                }
+            if ($recipe == $plan[$q]) {
+                $accept = false;
+            }
         }
 
         //Unset the recipe variable ready for the next loop
@@ -144,4 +148,3 @@ for ($x = 0; $x < 7; $x++) {
 
 //Jump to the calendar page to see the newly generated plan
 header("Location: ../../calendar/calendar.php");
-?>

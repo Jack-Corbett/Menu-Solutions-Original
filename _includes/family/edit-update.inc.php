@@ -1,5 +1,5 @@
 <?php
-include '../dbh.inc.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/_includes/dbh.inc.php';
 
 //Pass through all the new values from the edit page
 $member_id = $_POST['memberid'];
@@ -22,4 +22,3 @@ if (empty($firstname)) {
 
   header('Location: ../../family/members.php');
 }
-?>

@@ -1,5 +1,5 @@
 <?php
-include '../_includes/dbh.inc.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/_includes/dbh.inc.php';
 
 //Get the users ID from their session
 $id = $_SESSION['user_id'];
@@ -20,4 +20,3 @@ while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
   $default_ticked[] = $row['default_ticked'];
   $gender[] = $row['gender'];
 }
-?>

@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include '../dbh.inc.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/_includes/dbh.inc.php';
 
 //Pass through the members details and get the users ID from their session
 $firstname = mysqli_real_escape_string($conn, $_POST['firstname']);
@@ -25,4 +25,3 @@ if (empty($firstname)) {
 
   header('Location: ../../family/members.php');
 }
-?>

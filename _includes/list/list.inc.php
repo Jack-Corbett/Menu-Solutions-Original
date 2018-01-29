@@ -23,14 +23,16 @@ $un_measure = array();
 //Ignore = 5
 
 //Find each ingredient involved in each recipe of the users latest plan. Add the totals if the ingredient is used in more than one recipe
-$sql = "SELECT ingredients.category, ingredients.ingredient_name, SUM(plan_recipes.no_eating * ingredients_recipes.quantity) As amount, ingredients.measurement
- FROM plan_recipes
- JOIN recipes ON recipes.recipe_id = plan_recipes.recipe_id
- JOIN ingredients_recipes ON ingredients_recipes.recipe_id = recipes.recipe_id
- JOIN ingredients ON ingredients.ingredient_id = ingredients_recipes.ingredient_id
- WHERE plan_recipes.plan_id = '$plan_id'
- GROUP BY ingredients.ingredient_name
- ORDER BY ingredients.category";
+if (!empty($plan_id)) {
+    $sql = "SELECT ingredients.category, ingredients.ingredient_name, SUM(plan_recipes.no_eating * ingredients_recipes.quantity) As amount, ingredients.measurement
+     FROM plan_recipes
+     JOIN recipes ON recipes.recipe_id = plan_recipes.recipe_id
+     JOIN ingredients_recipes ON ingredients_recipes.recipe_id = recipes.recipe_id
+     JOIN ingredients ON ingredients.ingredient_id = ingredients_recipes.ingredient_id
+     WHERE plan_recipes.plan_id = '$plan_id'
+     GROUP BY ingredients.ingredient_name
+     ORDER BY ingredients.category";
+}
 $result = @mysqli_query($conn, $sql);
 
 //Split the ingredients into categories and add them to each corresponding array
@@ -80,5 +82,3 @@ function OutputArray($amount, $measure, $name, $half)
         }
     }
 }
-
-?>

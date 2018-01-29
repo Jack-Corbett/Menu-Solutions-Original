@@ -1,5 +1,5 @@
 <?php
-include '../_includes/dbh.inc.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/_includes/dbh.inc.php';
 
 //Get the member ID from the URL
 $member_id = mysqli_real_escape_string($conn, $_GET['member']);
@@ -9,4 +9,3 @@ $sql = "SELECT CONCAT(first_name, ' ', last_name) AS name FROM family WHERE memb
 $result = @mysqli_query($conn, $sql);
 
 $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-?>

@@ -1,5 +1,5 @@
 <?php
-include '../dbh.inc.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/_includes/dbh.inc.php';
 
 //Store the values passed through
 $name = $_POST['name'];
@@ -44,4 +44,3 @@ for ($i=0; $i<count($ingredient_name); $i++) {
 
 //Return to the admin page with a confirmation that the recipe has been added to the database
 header ('Location: ../../user/admin.php?added');
- ?>

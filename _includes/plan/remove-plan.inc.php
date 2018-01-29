@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include '../dbh.inc.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/_includes/dbh.inc.php';
 
 //Get the users ID from their session
 $id = $_SESSION['user_id'];
@@ -18,4 +18,3 @@ $result = @mysqli_query($conn, $sql);
 
 //Link back to the plan page and display a message confirming deletion
 header ("Location: ../../plan/plan.php?removed");
-?>

@@ -34,4 +34,3 @@ if ($hash === NULL) {
     header("Location: ../../user/login.php?error=password");
   }
 }
-?>
