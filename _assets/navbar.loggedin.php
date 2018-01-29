@@ -46,6 +46,9 @@
 
         echo "<li class='w3-hide-small w3-hide-medium w3-padding-large'>" . $row['name'] . "</li>";
       ?>
+        <li class="w3-hide-small w3-hide-medium">
+            <a href="#" class="w3-padding-large w3-hover-theme">ACCOUNT</a>
+        </li>
       <li class="w3-hide-small w3-hide-medium">
         <a href="../_includes/user/logout.inc.php" class="w3-padding-large w3-hover-red">LOGOUT</a>
       </li>

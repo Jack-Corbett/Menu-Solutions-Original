@@ -82,10 +82,10 @@ include '../_assets/standardstyle.php';
                                     echo '../_img/other_user.png';
                                 } ?>"
                                      class="w3-left w3-circle w3-margin-right" style="width:30px">
-                                    <input class="w3-check" name="<?php echo $day[$i] . '[]' ?>" type="checkbox"
-                                        <?php if ($default_ticked[$x] == 1) {
-                                            echo "checked";
-                                        } ?> value="<?php echo $member_id[$x]; ?>" title="eatingThatDay">
+                                <input class="w3-check" name="<?php echo $day[$i] . '[]' ?>" type="checkbox"
+                                    <?php if ($default_ticked[$x] == 1) {
+                                        echo "checked";
+                                    } ?> value="<?php echo $member_id[$x]; ?>" title="eatingThatDay">
                                 <label class="w3-validate">&emsp;<?php echo $name[$x]; ?></label>
                             </div>
                             <?php
