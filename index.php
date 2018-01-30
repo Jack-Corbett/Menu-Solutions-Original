@@ -2,7 +2,6 @@
 include '_assets/header.php';
 ?>
 
-<!--suppress CheckImageSize -->
 <style>
     /* Sets the font for the page */
     body, h1, h2, h3, h4, h5, h6 {

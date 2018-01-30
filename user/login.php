@@ -58,7 +58,7 @@ include '../_assets/standardstyle.php';
             }
             ?>
 
-            <p>If you don&#39;t already have an account you can register for one below</p>
+            <p>Don't have an account?</p>
             <a href="register.php" class="w3-center w3-btn w3-hover-blue w3-animate-opacity w3-theme-d1">Register</a>
             <br/><br/>
 
