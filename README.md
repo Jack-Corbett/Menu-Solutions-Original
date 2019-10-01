@@ -1,4 +1,4 @@
-# Menu-Solutions
+# Menu Solutions
 
 > Menu Solutions has now been moved to the Laravel Framework. You can find out more at: www.menusolutions.co.uk
 
